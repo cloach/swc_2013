@@ -1,8 +1,11 @@
 class TimeSeries(object):
+    '''This class is whak yo'''
     def __init__(self, data):
+        '''This says self.data'''
         self.data = data
    
     def get(self, x):
+        '''get down on it if you really want it'''
         for (xi,yi) in self.data:
             if xi == x:
                 return yi
@@ -10,10 +13,12 @@ class TimeSeries(object):
         raise Exception("Didn't find the value")
    
     def view(self):
+        '''pass i guess'''
         pass
    
 
 class StepFunctionTimeSeries(TimeSeries):
+    '''step'''
     def get(self, x):
         '''Given an X value, get the corresponding Y value.
        
@@ -32,11 +37,14 @@ class StepFunctionTimeSeries(TimeSeries):
 
 
 class LinearTimeSeries(TimeSeries):
+    '''linear'''
     def __init__(self, data):
+        '''init'''
         TimeSeries.__init__(self, data)
         self.data.sort()
    
     def get(self, x):
+        '''gets stuff'''
         # if it's out of range to the left,
         # return the first value
         if x < self.data[0][0]:
